@@ -4,14 +4,19 @@
 
 class queue {
     int* internal_queue;
-    int cap;
-    int top_index;
+    int capacity;
+    int front_index;
+    int rear_index;
+    int count;
     void resize();
 
     public:
         queue();
+        ~queue();
         void enqueue(int val);
         void dequeue();
         void display();
+        void peek();
+
 };
 #endif
