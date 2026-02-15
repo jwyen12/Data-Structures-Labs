@@ -65,5 +65,5 @@ void queue::display(){
     for(int i = 0; i < count; i++){
         std::cout << internal_queue[(front_index + i) % capacity] << "<-";
     }
-    std::cout << std::endl;
+    std::cout << "End" << std::endl;
 }
