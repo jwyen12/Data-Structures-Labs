@@ -18,7 +18,7 @@ void queue::resize(){
     int new_capacity = capacity * 2;
     int* newArr = new int[new_capacity];
 
-    for(int i = 0; i<capacity; i++){
+    for(int i = 0; i<count; i++){
         newArr[i] = internal_queue[(front_index+i) % capacity];
     }
 
