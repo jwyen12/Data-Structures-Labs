@@ -7,6 +7,11 @@ stack::stack(){
 }
 
 
+stack::~stack(){
+    delete[] internal_stack;
+}
+
+
 void stack::resize(){
     int* newArr = new int[cap*2];
     for(int i{0}; i<cap; i++){
@@ -20,20 +25,26 @@ void stack::resize(){
 
 
 void stack::push(int val){
+    if(top_index +1 == cap) resize();
     top_index++;
-    if(top_index == cap) resize();
     internal_stack[top_index] = val;
     
 }
 
 
 void stack::pop(){
+    if(top_index == -1) return;
     top_index--;
 }
 
 
 void stack::peek(){
-    std::cout << internal_stack[top_index] << std::endl;
+    if(top_index == -1){
+        std::cout << "The stack is empty" << std::endl;
+    }
+    else{
+        std::cout << internal_stack[top_index] << std::endl;
+    }
 }
 
 

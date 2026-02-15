@@ -10,6 +10,7 @@ class stack {
 
     public:
         stack();
+        ~stack();
         void push(int val);
         void pop();
         void peek();
